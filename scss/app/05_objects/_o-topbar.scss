@@ -1,0 +1,231 @@
+.o-topbar {
+
+	/*	BACKGROUND	*/
+
+	height: 150px;
+	position: relative;
+
+
+	&:before , &:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		background-color: $darkblue;
+
+	}
+
+	&:before {
+		clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
+		opacity: 0.8;
+	}
+	&:after {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55%);
+		opacity: 0.5;
+	}
+
+
+	/*  NAVIGATION  */
+
+	&Menu_nav {
+		padding-right: 15px;
+
+		&Item {
+			position: relative;
+			display: inline-block;
+
+			a {
+				display: block;
+				padding: 35px 15px 20px 15px;
+				opacity: 0.7;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+			
+			&.active a {
+				opacity: 1;
+			}
+
+			&.active:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				border-left: 7px solid transparent;
+				border-right: 7px solid transparent;
+				border-top: 7px solid $white;
+				
+			}
+
+		}
+		
+		/* DROPDOWN NAV */
+
+		&Extend:hover &Dropdown{
+			display: block;
+		}
+
+		&Dropdown {
+			position: absolute;
+			top: 100%;
+			display: none;
+			width: 150px;
+			font-size: 0.8em;
+
+			a {
+				padding: 8px 18px;
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				top: -7px;
+				left: 50%;
+				transform: translateX(-50%);
+
+				border-left: 7px solid transparent;
+				border-right: 7px solid transparent;
+				border-bottom: 7px solid $bluen;
+
+				opacity: 0.9;
+
+			}
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background-color: $bluen;
+				opacity: 0.9;
+				z-index: -1;
+			}
+
+			/* mini nav */
+			ul {
+
+				background-color: $bluemn;
+
+				li {
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+					font-size: 0.7em;
+					
+					a {
+						padding: 5px 25px;
+					}
+				}
+			}
+		}
+
+	}
+
+	/*  LANGUAGE BAR  */
+
+	&CL {
+		margin-top: 24px;
+		padding-bottom: 15px;
+	}
+	
+	&Curr {
+		padding-left: 15px;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 40px;
+			border-left: 1px solid $white;
+			opacity: 0.4;
+
+		}
+	}
+
+
+	&Curr ,
+	&Lang {
+		box-sizing: content-box;
+		position: relative;
+		display: inline-block;
+
+		a {
+			opacity: 0.7;
+			display: inherit;
+			padding: 10px 15px 20px 15px;
+
+			&:hover{
+				opacity: 1;
+			}
+
+			&.active {
+				font-weight: bold;
+			}
+		}
+
+		&:hover ul{
+			display: block;
+		}
+
+		ul {
+			position: absolute;
+			top: 100%;
+			right: 4px;
+			width: 70px;
+			display: none;
+			color: white;
+			font-size: 0.9em;
+			
+			a {
+				opacity: 1;
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				top: -7px;
+				right: 8px;
+
+				border-left: 7px solid transparent;
+				border-right: 7px solid transparent;
+				border-bottom: 7px solid $bluen;
+
+				opacity: 0.9;
+
+			}
+			
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background-color: $bluen;
+				opacity: 0.9;
+				z-index: -1;
+			}
+			
+			li {
+
+				a {
+					display: block;
+					padding: 6px 12px;
+				}
+
+			}
+
+		}
+
+	}
+
+	
+}
