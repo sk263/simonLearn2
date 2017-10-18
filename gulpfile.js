@@ -11,6 +11,7 @@ var gulp = require('gulp'),
 
 var jsPaths = [
   'node_modules/jquery/dist/jquery.js',
+  'node_modules/bootstrap/node_modules/tether/dist/js/tether.js',
   'node_modules/bootstrap/dist/js/bootstrap.js',
   'js/app/**/*.js'
 ];

@@ -12,91 +12,104 @@
 	
 	
 
-<header>
+<header style="position: relative;">
 	<div class="o-topbar color-white">
 		<div class="container">
-			<div class="row">
-				<div class="col-6 col-sm-3">
-					<img class="o-topbar_logo py-3" src="../media/logo.png" alt="">
+			<div class="d-flex justify-content-between">
+				<div class="o-topbar_logo">
+					<img src="../media/logo.png" alt="">
 					<h1 class="sr-only">KAR</h1>
 				</div>
 
-				<div class="col-6 col-sm-9">
-					<div class="o-topbarMenu d-flex justify-content-end">
-						<nav class="o-topbarMenu_nav">
-							<h1 class="sr-only">Main Navigation</h1>
+				<div class="o-topbarMenu d-flex justify-content-end">
+					<nav class="o-topbarMenu_nav" data-mobile-menu-item="menu">
+						<h1 class="sr-only">Main Navigation</h1>
+
+						<ul>
+							<li class="o-topbarMenu_navItem o-topbarMenu_navExtend active">
+								<a href="#">Accommodation</a>
+
+								<ul class="o-topbarMenu_navDropdown">
+									<li>
+										<a href="#">Hotel</a>
+									</li>
+									<li>
+										<a href="#">Villa</a>
+										<ul>
+											<li><a href="#">Villa Medulin</a></li>
+											<li><a href="#">Villa Plava</a></li>
+											<li><a href="#">Villa Long Name</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">Private accomodation</a>
+									</li>
+								</ul>
+
+							</li>
+							<li class="o-topbarMenu_navItem"><a href="#">Contact</a></li>
+							<li class="o-topbarMenu_navItem"><a href="#">About us</a></li>
+							<li class="o-topbarMenu_navItem"><a href="#">Information</a></li>
+						</ul>					
+
+					</nav>
+
+					<div class="o-topbarCL hidden-sm-down">
+
+						<span class="o-topbarCurr">
+							<a href="#">
+								EUR 
+								<i class="fa fa-caret-down" aria-hidden="true"></i>
+							</a>	
 
 							<ul>
-								<li class="o-topbarMenu_navItem o-topbarMenu_navExtend active">
-									<a href="#">Accommodation</a>
 
-									<ul class="o-topbarMenu_navDropdown">
-										<li>
-											<a href="">Hotel</a>
-										</li>
-										<li>
-											<a href="">Villa</a>
-											<ul>
-												<li><a href="">Villa Medulin</a></li>
-												<li><a href="">Villa Plava</a></li>
-												<li><a href="">Villa Long Name</a></li>
-											</ul>
-										</li>
-										<li>
-											<a href="">Private accomodation</a>
-										</li>
-									</ul>
+								<li><a href="#">HRK</a></li>
 
-								</li>
-								<li class="o-topbarMenu_navItem"><a href="">Contact</a></li>
-								<li class="o-topbarMenu_navItem"><a href="">About us</a></li>
-								<li class="o-topbarMenu_navItem"><a href="">Information</a></li>
-							</ul>					
+								<li><a class="active" href="##">EUR</a></li>
 
-						</nav>
+								<li><a href="#">USD</a></li>
 
-						<div class="o-topbarCL">
-							
-							<span class="o-topbarCurr">
-								<a href="#">
-									EUR 
-									<i class="fa fa-caret-down" aria-hidden="true"></i>
-								</a>	
+							</ul>
+						</span>
 
-								<ul>
+						<span class="o-topbarLang">
+							<a href="#">
+								ENG 
+								<i class="fa fa-caret-down" aria-hidden="true"></i>
+							</a>
 
-									<li><a href="">HRK</a></li>
+							<ul>
 
-									<li><a class="active" href="">EUR</a></li>
+								<li><a href="#">GER</a></li>
 
-									<li><a href="">USD</a></li>
+								<li><a class="active" href="#">ENG</a></li>
 
-								</ul>
-							</span>
-							
-							<span class="o-topbarLang">
-								<a href="">
-									ENG 
-									<i class="fa fa-caret-down" aria-hidden="true"></i>
-								</a>
+								<li><a href="#">HR</a></li>
 
-								<ul>
+							</ul>
 
-									<li><a href="">GER</a></li>
+						</span>
 
-									<li><a class="active" href="">ENG</a></li>
+					</div>
 
-									<li><a href="">HR</a></li>
-
-								</ul>
-
-							</span>
-
+					<div class="o-topbarMobMenu hidden-md-up">
+						<div class="o-topbarMobMenu_item p-3" data-mobile-menu-trigger="search">
+							<img src="../media/search_icon.png" alt="">
 						</div>
-					</div>					
-				</div>
+						<div class="o-topbarMobMenu_item p-3" data-mobile-menu-trigger="menu">
+							<img src="../media/menu_icon.png" alt="">
+						</div>
+					</div>
+				</div>					
+
 			</div>
 		</div>
+
+		<div class="slider" style = "position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2;">
+			<img class="w-100" src="../media/header_main.jpg" alt="" style="z-index:-2;">
+		</div>
+
 	</div>
 </header>
 
