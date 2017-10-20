@@ -1,0 +1,29 @@
+.btn_primary {
+	position: relative;
+	border: 1px solid $white;
+	color: $white;
+	background: linear-gradient(to bottom, rgba(250,217,97,1) 0%,rgba(248,141,49,1) 100%);
+	z-index: 1;
+	font-size: 1rem;
+
+	&:before {
+		@extend %cNposAs0;
+		bottom: -1px;
+		z-index: -1;
+		background-image: url("../../media/btn.svg");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 100% 102%;
+
+	}
+
+	&:hover {
+		opacity: 0.92;
+	}
+
+}
+
+
+.btn-lg {
+	padding: 0.9rem 1.5rem;
+}

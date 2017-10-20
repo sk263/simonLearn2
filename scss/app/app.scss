@@ -3,18 +3,23 @@
 */
 @import "00_settings/bootstrap-settings";
 @import "00_settings/colors";
+@import "00_settings/typography";
 /*
 	01_tools
 */
+@import "01_tools/inherit";
 @import "01_tools/media";
-/*
-	02_generic
-*/
 
 /*
 	Bootstrap
 */
 @import "08_vendor/bootstrap";
+
+
+/*
+	02_generic
+*/
+@import "02_generic/base";
 
 /* 
 	03_base
@@ -24,11 +29,17 @@
 /*
 	04_components
 */
+@import "04_components/c-btn";
+@import "04_components/c-form";
 
 /*
 	05_objects
 */
+@import "05_objects/o-bg_menu";
 @import "05_objects/o-topbar";
+@import "05_objects/o-search";
+@import "05_objects/o-slider";
+
 
 /*
 	07_trumps
@@ -38,4 +49,3 @@
 /*
 	08_vendors
 */
-@import "../../node_modules/normalize.css/normalize";

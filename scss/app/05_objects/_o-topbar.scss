@@ -1,9 +1,12 @@
 .o-topbar {
 
 	/*	BACKGROUND	*/
+	@extend %posAsy0;
+	top: 0;
 
 	height: 150px;
-	position: relative;
+	z-index: 1;
+
 
 	@include bmd-down {
 		height: 85px;
@@ -14,27 +17,6 @@
 		height: 70px;
 	}
 
-
-	&:before , &:after {
-		content: '';
-		position: absolute;
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		z-index: -1;
-		background-color: $darkblue;
-
-	}
-
-	&:before {
-		clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
-		opacity: 0.7;
-	}
-	&:after {
-		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 55%);
-		opacity: 0.4;
-	}
 
 	/* LOGO */
 
@@ -64,45 +46,40 @@
 
 		@include bsm-down {
 			display: none;
+			padding-right: 0;
+		}
+
+
+		&.active-mobile &Dropdown {
+			width: 100%;
+
+			ul {
+				font-size: 1rem;
+			}
 		}
 
 		&.active-mobile {
-			position: absolute;
+			@extend %posAsy0;
 			top: 100%;
-			left: 0;
-			right: 0;
 			display: inline;
-			
-			&:after {
-				content: "";
-				position: absolute;
-				top: -7px;
-				right: 30px;
 
-				border-left: 7px solid transparent;
-				border-right: 7px solid transparent;
-				border-bottom: 7px solid $bluen;
-				
+			&:after {
+				@extend %upBlueArrow;
+				top: -10px;
+				right: 20px;
+
 			}
 
 			&:before {
-				content: "";
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
+				@extend %cNposAs0;
+
 				background-color: $bluen;
 				opacity: 0.99;
 				z-index: -1;
 			}
 
 			li {
-				display: block;
-				// ul {
-				// 	display: block;
-				// 	position: relative;
-				// }
+				@include dB;
 			}
 
 		}
@@ -114,7 +91,9 @@
 			a {
 				display: block;
 				padding: 35px 0.75rem 20px 0.75rem;
-				opacity: 0.7;
+				@include bsm-up {
+					opacity: 0.7;
+				}
 
 				@include bmd-down {
 					padding: 22px 0.75rem 20px;
@@ -124,34 +103,51 @@
 					opacity: 1;
 				}
 			}
-			
-			&.active a {
+
+			.active {
 				opacity: 1;
 			}
 
-			&.active:before {
-				content: "";
-				position: absolute;
-				top: 0;
-				left: 50%;
-				transform: translateX(-50%);
-				border-left: 7px solid transparent;
-				border-right: 7px solid transparent;
-				border-top: 7px solid $white;
+			.active:before {
+				@extend %downWhiteArrow;
 
 				@include bsm-down {
 					display: hidden;
 					opacity: 0;
 				}
-				
+
 			}
 
 		}
-		
-		/* DROPDOWN NAV */
 
-		&Extend:hover &Dropdown{
-			display: block;
+		/* DROPDOWN NAV */
+		@include bsm-up {
+			&Extend:hover &Dropdown {
+				@include dB;
+			}
+		}
+
+		&Extend {
+			input[type=checkbox] {
+				position: absolute;
+				top: -9999px;
+				left: -9999px;
+			}
+
+			input[type=checkbox]:checked ~ .o-topbarMenu_navDropdown{
+				position: relative;
+				display: block;
+			}
+		}
+
+		&Btn {
+			z-index: 1;
+			@include bsm-down {
+				@include downWhiteArrowNoPos;
+				top: 7px;
+				right: 35px;
+				margin: 20px;
+			}
 		}
 
 		&Dropdown {
@@ -160,7 +156,6 @@
 			display: none;
 			width: 150px;
 			font-size: 0.9em;
-
 			box-shadow: 0px 4px 14px -1px rgba(0,0,0,0.75);
 
 			a {
@@ -168,26 +163,14 @@
 			}
 
 			&:after {
-				content: "";
-				position: absolute;
+				@extend %upBlueArrow;
 				top: -7px;
 				left: 50%;
-				transform: translateX(-50%);
-
-				border-left: 7px solid transparent;
-				border-right: 7px solid transparent;
-				border-bottom: 7px solid $bluen;
-
 				opacity: 0.9;
-
 			}
+
 			&:before {
-				content: "";
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
+				@extend %cNposAs0;
 				background-color: $bluen;
 				opacity: 0.9;
 				z-index: -1;
@@ -199,14 +182,13 @@
 				background-color: $bluemn;
 
 				li {
-					display: block;
-					margin-left: auto;
-					margin-right: auto;
+					@extend %dBmY-a;
 					font-size: 0.8em;
 					
 					a {
 						padding: 5px 25px;
 					}
+
 				}
 			}
 		}
@@ -222,6 +204,9 @@
 		@include bmd-down {
 			margin-top: 12px;
 		}
+		@include bsm-down {
+			display: none;
+		}
 	}
 	
 	&Curr {
@@ -229,9 +214,8 @@
 
 		&:before {
 			content: "";
-			position: absolute;
+			@extend %posAsy0;
 			top: 7px;
-			left: 0;
 			height: 30px;
 			border-left: 1px solid $white;
 			opacity: 0.4;
@@ -246,21 +230,22 @@
 		display: inline-block;
 
 		a {
-			opacity: 0.7;
 			display: inherit;
 			padding: 10px 15px 20px 15px;
+			opacity: 0.7;
 
-			&:hover{
+			&:hover {
 				opacity: 1;
 			}
 
 			&.active {
-				font-weight: bold;
+				font-weight: 700;
+				opacity: 1;
 			}
 		}
 
 		&:hover ul{
-			display: block;
+			@include dB;
 		}
 
 		ul {
@@ -275,30 +260,20 @@
 			box-shadow: 0px 4px 14px -1px rgba(0,0,0,0.75);
 			
 			a {
-				opacity: 1;
+				opacity: 0.7;
 			}
 
 			&:after {
-				content: "";
-				position: absolute;
+				@extend %upBlueArrow;
 				top: -7px;
 				right: 8px;
-
-				border-left: 7px solid transparent;
-				border-right: 7px solid transparent;
-				border-bottom: 7px solid $bluen;
 
 				opacity: 0.9;
 
 			}
 			
 			&:before {
-				content: "";
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
+				@extend %cNposAs0;
 				background-color: $bluen;
 				opacity: 0.9;
 				z-index: -1;
@@ -307,7 +282,7 @@
 			li {
 
 				a {
-					display: block;
+					@include dB;
 					padding: 6px 12px;
 				}
 
@@ -331,14 +306,16 @@
 			}
 
 			&.active-mobile:after {
-				content: "";
-				position: absolute;
-				top: 0;
-				left: 50%;
-				transform: translateX(-50%);
-				border-left: 7px solid transparent;
-				border-right: 7px solid transparent;
-				border-top: 7px solid $white;
+				@extend %downWhiteArrow;
+			}
+
+			&:first-child {
+				&.active-mobile:before {
+					@extend %upBlueArrow;
+					left: 50%;
+					bottom: -1px;
+					
+				}
 			}
 		}
 	}

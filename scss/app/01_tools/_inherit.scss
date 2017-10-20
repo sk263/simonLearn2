@@ -1,0 +1,67 @@
+%cNposA {
+	content: "";
+	position: absolute;
+}
+
+%cNposAs0		{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+%bg-rotated	{
+	content: "";
+	position: absolute;
+	top: -35px;
+	left: -10px;
+	right: -10px;
+	height: 150px;
+}
+
+@mixin downWhiteArrowNoPos {
+	content: "";
+	position: absolute;
+	
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-top: 12px solid $white;
+}
+
+%downWhiteArrow {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 7px solid $white;
+}
+
+%upBlueArrow {
+	content: "";
+	position: absolute;
+	transform: translateX(-50%);
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid $bluen;
+}
+
+%dBmY-a {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+%posAsy0 {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+@mixin dB {
+	display: block;
+}

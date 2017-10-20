@@ -3,8 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../css/app.css">
+	<link rel="stylesheet" type="text/css" href="../css/build/app.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,700&amp;subset=latin-ext" rel="stylesheet">
 
 	<title>KAR</title>
 </head>
@@ -12,7 +13,12 @@
 	
 	
 
-<header style="position: relative;">
+<header>
+
+	<div class="o-bg_menu">
+		
+	</div>
+
 	<div class="o-topbar color-white">
 		<div class="container">
 			<div class="d-flex justify-content-between">
@@ -26,9 +32,11 @@
 						<h1 class="sr-only">Main Navigation</h1>
 
 						<ul>
-							<li class="o-topbarMenu_navItem o-topbarMenu_navExtend active">
-								<a href="#">Accommodation</a>
-
+							<li class="o-topbarMenu_navItem o-topbarMenu_navExtend">
+								<a class="active" href="#">Accommodation</a>
+								
+								<input type="checkbox" id="button" />
+								<label for="button" onclick><div class="o-topbarMenu_navBtn"></div></label>
 								<ul class="o-topbarMenu_navDropdown">
 									<li>
 										<a href="#">Hotel</a>
@@ -54,7 +62,7 @@
 
 					</nav>
 
-					<div class="o-topbarCL hidden-sm-down">
+					<div class="o-topbarCL">
 
 						<span class="o-topbarCurr">
 							<a href="#">
@@ -105,11 +113,80 @@
 
 			</div>
 		</div>
+	</div>
 
-		<div class="slider" style = "position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -2;">
-			<img class="w-100" src="../media/header_main.jpg" alt="" style="z-index:-2;">
+	<div class="o-slider">
+		<img class="o-slider_img" src="../media/header_main.jpg" alt="" style="">
+
+		<div class=" o-search" data-mobile-menu-item="search">
+			<div class="container">
+				<div class="row">
+					<div class="col" >
+						
+
+						<form class="py-4" action="">
+							<ul class="o-search_list d-flex flex-wrap my-2">
+
+								<li class="o-search_item" >
+									<div class="form-group">
+										<label class="sr-only" for="location">Accomodation type</label>
+										<select id="location" class="form-control form-control-lg" data-live-search="true">
+											<option>Accomodation type</option>
+										</select>
+									</div>
+								</li>
+
+								<li class="o-search_item">
+									<div class="form-group">
+										<label class="sr-only" for="location">Location</label>
+										<select id="location" class="form-control form-control-lg" data-live-search="true">
+											<option>Location</option>
+										</select>
+									</div>
+								</li>
+
+								<li class="o-search_item">
+									<div class="form-group">
+										<label class="sr-only" for="location">CheckIn</label>
+										<select id="location" class="form-control form-control-lg">
+											<option>Check In</option>
+										</select>
+									</div>
+								</li>
+
+								<li class="o-search_item">
+									<div class="form-group">
+										<label class="sr-only" for="location">CheckOut</label>
+										<select id="location" class="form-control form-control-lg">
+											<option>Check Out</option>
+										</select>
+									</div>
+								</li>
+
+								<li class="o-search_item">
+									<div class="form-group">
+										<label class="sr-only" for="location">Guests</label>
+										<select id="location" class="form-control form-control-lg">
+											<option>Guests</option>
+										</select>
+									</div>
+								</li>
+
+								<li class="o-search_item">
+									<div class="form-group">
+										<label class="sr-only" for="search">Search</label>
+										<button id="search" class="btn-lg btn_primary rounded-0 btn-block" type="submit">Search</button>
+									</div>
+								</li>
+							</ul>
+						</form>
+
+
+					</div>
+				</div>
+			</div>
+
 		</div>
-
 	</div>
 </header>
 

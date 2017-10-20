@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="186px" height="49px" viewBox="0 0 186 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="21.7930406%" y1="50%" x2="16.9195896%" y2="-23.8957065%" id="linearGradient-1">
+            <stop stop-color="#000000" offset="0%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.35">
+        <g id="Group" fill="url(#linearGradient-1)">
+            <path d="M186,2.13162821e-14 L1.13686838e-13,3.49224196e-14 L2.22015484e-13,48 C2.22015484e-13,48 22.1065574,49 76.9918033,34" id="Rectangle-4" transform="translate(93.000000, 24.006920) rotate(-180.000000) translate(-93.000000, -24.006920) "></path>
+        </g>
+    </g>
+</svg>

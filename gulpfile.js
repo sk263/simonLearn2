@@ -16,6 +16,11 @@ var jsPaths = [
   'js/app/**/*.js'
 ];
 
+var cssPaths = [
+  'node_modules/normalize.css/normalize.css',
+  'css/app.css'
+];
+
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
   gulp.src("./scss/app/app.scss")
@@ -23,6 +28,9 @@ gulp.task('sass', function() {
   .pipe(sass())
   .pipe(prefix('last 3 versions'))
   .pipe(gulp.dest("./css/"))
+  gulp.src(cssPaths)
+  .pipe(concat('app.css'))
+  .pipe(gulp.dest('css/build/'))
   .pipe(browserSync.stream());
 });
 
@@ -37,12 +45,13 @@ gulp.task('build', function () {
 });
 
 
-//Concat
-gulp.task('concat' , function(){
+//ConcatJS
+gulp.task('concatJS' , function(){
   return gulp.src(jsPaths)
   .pipe(concat('main.js'))
   .pipe(gulp.dest('js/build/'));
 });
+
 
 
 //Compress
@@ -67,8 +76,8 @@ gulp.task('serve', ['sass' , 'build'], function() {
 
   gulp.watch("scss/app/**/*.scss", ['sass']);
   gulp.watch("html/**/*.html", ['build']);
-  gulp.watch("js/app/**/*.js", ['concat' , 'compress']);
+  gulp.watch("js/app/**/*.js", ['concatJS' , 'compress']);
 });
 
-gulp.task('default', ['serve' , 'concat' , 'compress']);
+gulp.task('default', ['serve' , 'concatJS' , 'compress']);
 
